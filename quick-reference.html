@@ -630,40 +630,27 @@
                             <tr>
                                 <td>Duration</td>
                                 <td><span class="type">number</span></td>
-                                <td><span class="optional">Optional</span></td>
-                                <td>Display duration in seconds</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                <script>
+                                    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+                                    const sections = document.querySelectorAll('.component-ref');
 
-            </div>
-        </div>
-    </div>
+                                    window.addEventListener('scroll', () => {
+                                        let current = '';
+                                        sections.forEach(section => {
+                                            const sectionTop = section.offsetTop - 120;
+                                            if (window.scrollY >= sectionTop) {
+                                                current = section.getAttribute('id');
+                                            }
+                                        });
 
-    <script src="script.js"></script>
-    <script>
-        // Active sidebar link on scroll
-        const sidebarLinks = document.querySelectorAll('.sidebar-link');
-        const sections = document.querySelectorAll('.component-ref');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            sidebarLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+                                        sidebarLinks.forEach(link => {
+                                            link.classList.remove('active');
+                                            if (link.getAttribute('href') === '#' + current) {
+                                                link.classList.add('active');
+                                            }
+                                        });
+                                    });
+                                </script>
 </body>
 
 </html>
