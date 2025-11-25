@@ -181,13 +181,17 @@
                     <a href="#dropdown" class="sidebar-link">Dropdown</a>
                     <a href="#input" class="sidebar-link">Input</a>
                     <a href="#slider" class="sidebar-link">Slider</a>
+                    <a href="#keybind" class="sidebar-link">Keybind</a>
                     <a href="#colorpicker" class="sidebar-link">ColorPicker</a>
                     <a href="#tab" class="sidebar-link">Tab</a>
                     <a href="#section" class="sidebar-link">Section</a>
                     <a href="#group" class="sidebar-link">Group</a>
                     <a href="#code" class="sidebar-link">Code</a>
                     <a href="#image" class="sidebar-link">Image</a>
+                    <a href="#video" class="sidebar-link">Video</a>
                     <a href="#paragraph" class="sidebar-link">Paragraph</a>
+                    <a href="#divider" class="sidebar-link">Divider</a>
+                    <a href="#space" class="sidebar-link">Space</a>
                     <a href="#notify" class="sidebar-link">Notify</a>
                     <a href="#dialog" class="sidebar-link">Dialog</a>
                 </div>
@@ -622,35 +626,567 @@
                                 <td>Notification title</td>
                             </tr>
                             <tr>
-                                <td>Content</td>
-                                <td><span class="type">string</span></td>
-                                <td><span class="required">Required</span></td>
-                                <td>Notification content</td>
                             </tr>
                             <tr>
                                 <td>Duration</td>
                                 <td><span class="type">number</span></td>
-                                <script>
-                                    const sidebarLinks = document.querySelectorAll('.sidebar-link');
-                                    const sections = document.querySelectorAll('.component-ref');
+                                <td><span class="optional">Optional</span></td>
+                                <td>Display duration in seconds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-                                    window.addEventListener('scroll', () => {
-                                        let current = '';
-                                        sections.forEach(section => {
-                                            const sectionTop = section.offsetTop - 120;
-                                            if (window.scrollY >= sectionTop) {
-                                                current = section.getAttribute('id');
-                                            }
-                                        });
+                <!-- Input -->
+                <div id="input" class="component-ref">
+                    <h2>Input</h2>
+                    <p class="subtitle">Text input field with textarea variant</p>
 
-                                        sidebarLinks.forEach(link => {
-                                            link.classList.remove('active');
-                                            if (link.getAttribute('href') === '#' + current) {
-                                                link.classList.add('active');
-                                            }
-                                        });
-                                    });
-                                </script>
+                    <div class="code-block">
+                        <pre><code>Tab:Input(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Input title</td>
+                            </tr>
+                            <tr>
+                                <td>Desc</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Description text</td>
+                            </tr>
+                            <tr>
+                                <td>Placeholder</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Placeholder text</td>
+                            </tr>
+                            <tr>
+                                <td>Type</td>
+                                <td><span class="type">"Input" | "Textarea"</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Input variant (default: "Input")</td>
+                            </tr>
+                            <tr>
+                                <td>Value</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Default value</td>
+                            </tr>
+                            <tr>
+                                <td>Callback</td>
+                                <td><span class="type">function(text)</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Called when text changes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Keybind -->
+                <div id="keybind" class="component-ref">
+                    <h2>Keybind</h2>
+                    <p class="subtitle">Key binding selector for user input</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Keybind(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Keybind title</td>
+                            </tr>
+                            <tr>
+                                <td>Desc</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Description text</td>
+                            </tr>
+                            <tr>
+                                <td>Value</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Default key (default: "F")</td>
+                            </tr>
+                            <tr>
+                                <td>CanChange</td>
+                                <td><span class="type">boolean</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Allow users to change key</td>
+                            </tr>
+                            <tr>
+                                <td>Callback</td>
+                                <td><span class="type">function(key)</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Called when key is pressed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Methods</h4>
+                    <table class="properties-table">
+                        <tbody>
+                            <tr>
+                                <td>:Set(key)</td>
+                                <td colspan="3">Set keybind value</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ColorPicker -->
+                <div id="colorpicker" class="component-ref">
+                    <h2>ColorPicker</h2>
+                    <p class="subtitle">Interactive color selection with opacity support</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:ColorPicker(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>ColorPicker title</td>
+                            </tr>
+                            <tr>
+                                <td>Desc</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Description text</td>
+                            </tr>
+                            <tr>
+                                <td>Value</td>
+                                <td><span class="type">Color3</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Default color value</td>
+                            </tr>
+                            <tr>
+                                <td>Callback</td>
+                                <td><span class="type">function(color)</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Called when color changes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Methods</h4>
+                    <table class="properties-table">
+                        <tbody>
+                            <tr>
+                                <td>:Set(color)</td>
+                                <td colspan="3">Set color value (Color3)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Tab -->
+                <div id="tab" class="component-ref">
+                    <h2>Tab</h2>
+                    <p class="subtitle">Navigation tab for organizing content</p>
+
+                    <div class="code-block">
+                        <pre><code>Window:Tab(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Tab title</td>
+                            </tr>
+                            <tr>
+                                <td>Icon</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Lucide icon name</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Section -->
+                <div id="section" class="component-ref">
+                    <h2>Section</h2>
+                    <p class="subtitle">Collapsible section for grouping elements</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Section(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Section title</td>
+                            </tr>
+                            <tr>
+                                <td>Opened</td>
+                                <td><span class="type">boolean</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Default open state (default: true)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Group -->
+                <div id="group" class="component-ref">
+                    <h2>Group</h2>
+                    <p class="subtitle">Horizontal layout container for elements</p>
+
+                    <div class="code-block">
+                        <pre><code>local Group = Tab:Group({})</code></pre>
+                    </div>
+
+                    <p>Groups elements horizontally. Add elements to the group:</p>
+                    <div class="code-block">
+                        <pre><code>Group:Button({Title = "Button 1"})
+Group:Toggle({Title = "Toggle 1"})</code></pre>
+                    </div>
+                </div>
+
+                <!-- Code -->
+                <div id="code" class="component-ref">
+                    <h2>Code</h2>
+                    <p class="subtitle">Syntax-highlighted code block display</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Code(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Code block title</td>
+                            </tr>
+                            <tr>
+                                <td>Code</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Code content to display</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Image -->
+                <div id="image" class="component-ref">
+                    <h2>Image</h2>
+                    <p class="subtitle">Display images with aspect ratio control</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Image(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Image</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Image URL or rbxassetid://</td>
+                            </tr>
+                            <tr>
+                                <td>AspectRatio</td>
+                                <td><span class="type">string | number</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Aspect ratio (e.g. "16:9")</td>
+                            </tr>
+                            <tr>
+                                <td>Radius</td>
+                                <td><span class="type">number</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Corner radius in pixels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Video -->
+                <div id="video" class="component-ref">
+                    <h2>Video</h2>
+                    <p class="subtitle">Video playback with caching support</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Video(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Video</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Video URL or rbxassetid://</td>
+                            </tr>
+                            <tr>
+                                <td>AspectRatio</td>
+                                <td><span class="type">string | number</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Aspect ratio (default: "16:9")</td>
+                            </tr>
+                            <tr>
+                                <td>Radius</td>
+                                <td><span class="type">number</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Corner radius in pixels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Paragraph -->
+                <div id="paragraph" class="component-ref">
+                    <h2>Paragraph</h2>
+                    <p class="subtitle">Text paragraph with title and description</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Paragraph(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Paragraph title</td>
+                            </tr>
+                            <tr>
+                                <td>Desc</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Paragraph text content</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Divider -->
+                <div id="divider" class="component-ref">
+                    <h2>Divider</h2>
+                    <p class="subtitle">Visual separator between elements</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Divider()</code></pre>
+                    </div>
+
+                    <p>Creates a horizontal or vertical line separator. No properties required.</p>
+                </div>
+
+                <!-- Space -->
+                <div id="space" class="component-ref">
+                    <h2>Space</h2>
+                    <p class="subtitle">Vertical or horizontal spacing control</p>
+
+                    <div class="code-block">
+                        <pre><code>Tab:Space(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Columns</td>
+                                <td><span class="type">number</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Spacing multiplier (default: 1)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Dialog -->
+                <div id="dialog" class="component-ref">
+                    <h2>Dialog</h2>
+                    <p class="subtitle">Modal dialog with custom buttons</p>
+
+                    <div class="code-block">
+                        <pre><code>Window:Dialog(options)</code></pre>
+                    </div>
+
+                    <table class="properties-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Dialog title</td>
+                            </tr>
+                            <tr>
+                                <td>Content</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Dialog message</td>
+                            </tr>
+                            <tr>
+                                <td>Buttons</td>
+                                <td><span class="type">array</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Array of button objects</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">Button Object</h4>
+                    <table class="properties-table">
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td><span class="type">string</span></td>
+                                <td><span class="required">Required</span></td>
+                                <td>Button text</td>
+                            </tr>
+                            <tr>
+                                <td>Variant</td>
+                                <td><span class="type">"Primary" | "Secondary" | "White"</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Button style variant</td>
+                            </tr>
+                            <tr>
+                                <td>Callback</td>
+                                <td><span class="type">function()</span></td>
+                                <td><span class="optional">Optional</span></td>
+                                <td>Called when button is clicked</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Active sidebar link on scroll
+        const sidebarLinks = document.querySelectorAll('.sidebar-link');
+        const sections = document.querySelectorAll('.component-ref');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
