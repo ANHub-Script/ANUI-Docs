@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANUI - Modern Roblox UI Library Documentation</title>
+    <meta name="description"
+        content="ANUI (ANHub UI) is a stylish, open-source UI library for Roblox Script Hubs. Learn how to install and use all the features.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                        <path d="M2 17l10 5 10-5" />
+                        <path d="M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="brand-text">ANUI</span>
+                <span class="brand-badge">BETA</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#installation" class="nav-link">Installation</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#components" class="nav-link">Components</a>
+                <a href="#examples" class="nav-link">Examples</a>
+                <a href="quick-reference.html" class="nav-link">API Reference</a>
+            </div>
+            <div class="nav-actions">
+                <a href="https://github.com/ANHub-Script/ANUI" target="_blank" class="btn-github">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-grid"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="tag-icon">✨</span>
+                    <span>Open Source UI Library for Roblox</span>
+                </div>
+                <h1 class="hero-title">
+                    Build Beautiful
+                    <span class="gradient-text">Script Interfaces</span>
+                    with ANUI
+                </h1>
+                <p class="hero-description">
+                    A stylish, modern, and customizable UI library specifically designed for Roblox Script Hubs.
+                    Create stunning interfaces with ease using our comprehensive component library.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">
+                        <span>Get Started</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#examples" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        <span>View Examples</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">Components</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">Lua/Luau</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <div class="stat-value">Open</div>
+                        <div class="stat-label">Source</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Installation</h2>
+                <p class="section-description">Get started with ANUI in just a few lines of code</p>
+            </div>
+
+            <div class="installation-grid">
+                <div class="installation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1" />
+                                <circle cx="12" cy="5" r="1" />
+                                <circle cx="12" cy="19" r="1" />
+                            </svg>
+                        </div>
+                        <h3>Quick Start</h3>
+                    </div>
+                    <p class="card-description">Load ANUI directly from GitHub</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">Luau</span>
+                            <button class="code-copy" onclick="copyCode(this, 'code-1')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                        <pre><code id="code-1">local ANUI = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/ANHub-Script/ANUI/refs/heads/main/dist/main.lua"
+))()</code></pre>
+                    </div>
+                </div>
+
+                <div class="installation-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                                <polyline points="13 2 13 9 20 9" />
+                            </svg>
+                        </div>
+                        <h3>Load Example</h3>
+                    </div>
+                    <p class="card-description">Try the full example showcase</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-language">Luau</span>
+                            <button class="code-copy" onclick="copyCode(this, 'code-2')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                </svg>
+                                Copy
+                            </button>
+                        </div>
+                        <pre><code id="code-2">loadstring(game:HttpGet(
+    'https://raw.githubusercontent.com/ANHub-Script/ANUI/refs/heads/main/main_example.lua'
+))()</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-icon warning">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                        <line x1="12" y1="9" x2="12" y2="13" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                </div>
+                <div class="info-content">
+                    <h4>Beta Version Notice</h4>
+                    <p>ANUI is currently in Beta. Bugs, issues, and unstable features may occur. We're constantly
+                        working on improvements!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose ANUI?</h2>
+                <p class="section-description">Powerful features for modern UI development</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Modern Design</h3>
+                    <p class="feature-description">Beautiful, customizable components with smooth animations and modern
+                        aesthetics</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Easy to Use</h3>
+                    <p class="feature-description">Simple and intuitive API designed for developers of all skill levels
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="9" y1="21" x2="9" y2="9" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Rich Components</h3>
+                    <p class="feature-description">15+ pre-built components including buttons, toggles, sliders,
+                        dropdowns, and more</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                            <line x1="9" y1="9" x2="9.01" y2="9" />
+                            <line x1="15" y1="9" x2="15.01" y2="9" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Customizable</h3>
+                    <p class="feature-description">Extensive customization options for colors, icons, sizes, and
+                        behaviors</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21" />
+                            <polyline points="7.5 19.79 7.5 14.6 3 12" />
+                            <polyline points="21 12 16.5 14.6 16.5 19.79" />
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                            <line x1="12" y1="22.08" x2="12" y2="12" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Luau Native</h3>
+                    <p class="feature-description">Written entirely in Lua/Luau, optimized for Roblox performance</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Open Source</h3>
+                    <p class="feature-description">Free and open source, available on GitHub with active community
+                        support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Available Components</h2>
+                <p class="section-description">Comprehensive collection of UI elements ready to use</p>
+            </div>
+
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </div>
+                        <h3>Window</h3>
+                    </div>
+                    <p>Main window container with customizable title, icon, and open button</p>
+                    <div class="component-tags">
+                        <span class="tag">Core</span>
+                        <span class="tag">Required</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 11l3 3L22 4" />
+                                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                            </svg>
+                        </div>
+                        <h3>Toggle</h3>
+                    </div>
+                    <p>Animated toggle switch with checkbox variant, icons, and programmatic control</p>
+                    <div class="component-tags">
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <path d="M12 8v8m-4-4h8" />
+                            </svg>
+                        </div>
+                        <h3>Button</h3>
+                    </div>
+                    <p>Clickable buttons with icons, colors, alignment options, and variants</p>
+                    <div class="component-tags">
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="8" y1="6" x2="21" y2="6" />
+                                <line x1="8" y1="12" x2="21" y2="12" />
+                                <line x1="8" y1="18" x2="21" y2="18" />
+                                <line x1="3" y1="6" x2="3.01" y2="6" />
+                                <line x1="3" y1="12" x2="3.01" y2="12" />
+                                <line x1="3" y1="18" x2="3.01" y2="18" />
+                            </svg>
+                        </div>
+                        <h3>Dropdown</h3>
+                    </div>
+                    <p>Select menus with single/multi selection, search, icons, and descriptions</p>
+                    <div class="component-tags">
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </div>
+                        <h3>Input</h3>
+                    </div>
+                    <p>Text input fields with textarea variant, placeholders, and validation</p>
+                    <div class="component-tags">
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="4" y1="12" x2="20" y2="12" />
+                                <circle cx="4" cy="12" r="2" />
+                                <circle cx="20" cy="12" r="2" />
+                            </svg>
+                        </div>
+                        <h3>Slider</h3>
+                    </div>
+                    <p>Value sliders with min/max range, step control, and live updates</p>
+                    <div class="component-tags">
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                        </div>
+                        <h3>Tab</h3>
+                    </div>
+                    <p>Organized content tabs with icons for better navigation</p>
+                    <div class="component-tags">
+                        <span class="tag">Layout</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7" />
+                                <rect x="14" y="3" width="7" height="7" />
+                                <rect x="14" y="14" width="7" height="7" />
+                                <rect x="3" y="14" width="7" height="7" />
+                            </svg>
+                        </div>
+                        <h3>Section</h3>
+                    </div>
+                    <p>Collapsible sections for grouping related content</p>
+                    <div class="component-tags">
+                        <span class="tag">Layout</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="9" />
+                                <rect x="14" y="3" width="7" height="5" />
+                                <rect x="14" y="12" width="7" height="9" />
+                                <rect x="3" y="16" width="7" height="5" />
+                            </svg>
+                        </div>
+                        <h3>Group</h3>
+                    </div>
+                    <p>Horizontal grouping of elements with equal widths</p>
+                    <div class="component-tags">
+                        <span class="tag">Layout</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                                <path d="M22 12A10 10 0 0 0 12 2v10z" />
+                            </svg>
+                        </div>
+                        <h3>ColorPicker</h3>
+                    </div>
+                    <p>Interactive color selection with opacity support</p>
+                    <div class="component-tags">
+                        <span class="tag">Interactive</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <h3>Code</h3>
+                    </div>
+                    <p>Syntax-highlighted code blocks with copy functionality</p>
+                    <div class="component-tags">
+                        <span class="tag">Display</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <rect x="7" y="7" width="3" height="9" />
+                                <rect x="14" y="7" width="3" height="5" />
+                            </svg>
+                        </div>
+                        <h3>Image</h3>
+                    </div>
+                    <p>Display images with aspect ratio and radius control</p>
+                    <div class="component-tags">
+                        <span class="tag">Display</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </div>
+                        <h3>Paragraph</h3>
+                    </div>
+                    <p>Text paragraphs with title and description</p>
+                    <div class="component-tags">
+                        <span class="tag">Display</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                            </svg>
+                        </div>
+                        <h3>Notify</h3>
+                    </div>
+                    <p>Notification system for user feedback</p>
+                    <div class="component-tags">
+                        <span class="tag">Feedback</span>
+                    </div>
+                </div>
+
+                <div class="component-card">
+                    <div class="component-header">
+                        <div class="component-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <path d="M9 3v18" />
+                                <path d="M15 3v18" />
+                            </svg>
+                        </div>
+                        <h3>Dialog</h3>
+                    </div>
+                    <p>Modal dialogs with custom buttons and content</p>
+                    <div class="component-tags">
+                        <span class="tag">Feedback</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Usage Examples</h2>
+                <p class="section-description">Learn how to use ANUI components in your scripts</p>
+            </div>
+
+            <div class="example-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-button active" onclick="switchTab('basic')">Basic Window</button>
+                    <button class="tab-button" onclick="switchTab('toggle')">Toggle</button>
+                    <button class="tab-button" onclick="switchTab('button')">Button</button>
+                    <button class="tab-button" onclick="switchTab('dropdown')">Dropdown</button>
+                    <button class="tab-button" onclick="switchTab('slider')">Slider</button>
+                </div>
+
+                <div class="tabs-content">
+                    <!-- Basic Window Tab -->
+                    <div class="tab-panel active" id="tab-basic">
+                        <h3 class="example-title">Creating a Basic Window</h3>
+                        <p class="example-description">Create your first ANUI window with customizable properties</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">Luau</span>
+                                <button class="code-copy" onclick="copyCode(this, 'code-basic')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                            <pre><code id="code-basic">-- Load the library
+local ANUI = loadstring(game:HttpGet(
+    "https://raw.githubusercontent.com/ANHub-Script/ANUI/refs/heads/main/dist/main.lua"
+))()
+
+-- Create a window
+local Window = ANUI:CreateWindow({
+    Title = "My First Script",
+    Author = "by YourName",
+    Folder = "myscript",
+    Icon = "rbxassetid://84366761557806",
+    IconSize = 44,
+    NewElements = true,
+    HideSearchBar = false,
+    OpenButton = {
+        Title = "My UI",
+        CornerRadius = UDim.new(1, 0),
+        StrokeThickness = 3,
+        Enabled = true,
+        Draggable = true,
+        OnlyMobile = false,
+        Color = ColorSequence.new(
+            Color3.fromHex("#30FF6A"), 
+            Color3.fromHex("#e7ff2f")
+        )
+    }
+})
+
+-- Add a version tag
+Window:Tag({
+    Title = "v1.0.0",
+    Icon = "github",
+    Color = Color3.fromHex("#1c1c1c")
+})</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Tab -->
+                    <div class="tab-panel" id="tab-toggle">
+                        <h3 class="example-title">Using Toggles and Checkboxes</h3>
+                        <p class="example-description">Create interactive toggles with animations and icons</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">Luau</span>
+                                <button class="code-copy" onclick="copyCode(this, 'code-toggle')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                            <pre><code id="code-toggle">-- Basic Toggle
+local MyToggle = Tab:Toggle({
+    Title = "Enable Feature",
+    Desc = "Turn this feature on or off",
+    Icon = "settings",
+    IconSize = 15,
+    Value = true, -- Default value
+    Callback = function(value)
+        print("Toggle is now:", value)
+    end
+})
+
+-- Checkbox Variant
+Tab:Toggle({
+    Title = "Agree to Terms",
+    Type = "Checkbox",
+    Value = false,
+    Callback = function(value)
+        print("Checkbox:", value)
+    end
+})
+
+-- Programmatic Control
+MyToggle:Set(false, true, false) -- Set to false, trigger callback, with animation
+MyToggle:SetTitle("Feature Disabled")
+MyToggle:SetDesc("Click to enable")</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Button Tab -->
+                    <div class="tab-panel" id="tab-button">
+                        <h3 class="example-title">Creating Buttons</h3>
+                        <p class="example-description">Add clickable buttons with custom styling</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">Luau</span>
+                                <button class="code-copy" onclick="copyCode(this, 'code-button')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                            <pre><code id="code-button">-- Basic Button
+Tab:Button({
+    Title = "Click Me",
+    Desc = "This is a button",
+    Icon = "mouse-pointer-click",
+    IconAlign = "Left",
+    Justify = "Center",
+    Callback = function()
+        print("Button clicked!")
+    end
+})
+
+-- Colored Button
+Tab:Button({
+    Title = "Execute Script",
+    Color = Color3.fromHex("#305dff"),
+    Icon = "play",
+    Callback = function()
+        -- Your code here
+    end
+})
+
+-- Locked Button
+Tab:Button({
+    Title = "Premium Feature",
+    Desc = "Unlock to access",
+    Locked = true,
+    Icon = "lock"
+})</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Tab -->
+                    <div class="tab-panel" id="tab-dropdown">
+                        <h3 class="example-title">Working with Dropdowns</h3>
+                        <p class="example-description">Create selection menus with search and icons</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">Luau</span>
+                                <button class="code-copy" onclick="copyCode(this, 'code-dropdown')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                            <pre><code id="code-dropdown">-- Simple Dropdown
+Tab:Dropdown({
+    Title = "Select Option",
+    Values = {"Option 1", "Option 2", "Option 3"},
+    Value = "Option 1",
+    SearchBarEnabled = true,
+    Callback = function(value)
+        print("Selected:", value)
+    end
+})
+
+-- Dropdown with Icons
+Tab:Dropdown({
+    Title = "Choose Weapon",
+    Values = {
+        {Title = "Sword", Icon = "sword"},
+        {Title = "Bow", Icon = "target"},
+        {Title = "Staff", Icon = "wand"}
+    },
+    Value = {Title = "Sword", Icon = "sword"},
+    SearchBarEnabled = true,
+    Callback = function(option)
+        print("Selected:", option.Title)
+    end
+})
+
+-- Multi-select Dropdown
+Tab:Dropdown({
+    Title = "Select Multiple",
+    Values = {"A", "B", "C", "D"},
+    Multi = true,
+    Value = {"A", "B"},
+    Callback = function(values)
+        print("Selected items:", table.concat(values, ", "))
+    end
+})</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Slider Tab -->
+                    <div class="tab-panel" id="tab-slider">
+                        <h3 class="example-title">Using Sliders</h3>
+                        <p class="example-description">Create value sliders with custom ranges</p>
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">Luau</span>
+                                <button class="code-copy" onclick="copyCode(this, 'code-slider')">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                                    </svg>
+                                    Copy
+                                </button>
+                            </div>
+                            <pre><code id="code-slider">-- Integer Slider
+local WalkSpeedSlider = Tab:Slider({
+    Title = "Walk Speed",
+    Desc = "Adjust your walking speed",
+    Value = {
+        Min = 16,
+        Max = 100,
+        Default = 16
+    },
+    Callback = function(value)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+    end
+})
+
+-- Decimal Slider
+Tab:Slider({
+    Title = "Brightness",
+    Step = 0.1,
+    Value = {
+        Min = 0,
+        Max = 1,
+        Default = 0.5
+    },
+    Callback = function(value)
+        game.Lighting.Brightness = value
+    end
+})
+
+-- Programmatic Control
+WalkSpeedSlider:Set(50)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <span class="brand-text">ANUI</span>
+                </div>
+                <p class="footer-description">
+                    A stylish, open-source UI library for Roblox Script Hubs.<br>
+                    Developed by AdityaNugraha (.an)
+                </p>
+                <div class="footer-links">
+                    <a href="https://github.com/ANHub-Script/ANUI" target="_blank">GitHub</a>
+                    <span>•</span>
+                    <a href="https://discord.gg/cy6uMRmeZ" target="_blank">Discord</a>
+                    <span>•</span>
+                    <a href="https://ANHub-Script.github.io/ANUI-Docs/" target="_blank">Official Docs</a>
+                </div>
+                <div class="footer-credits">
+                    <p>Credits:</p>
+                    <div class="credits-links">
+                        <a href="https://github.com/dawid-scripts" target="_blank">Dawid-Scripts</a>
+                        <a href="https://github.com/lucide-icons/lucide" target="_blank">Lucide Icons</a>
+                        <a href="https://github.com/Footagesus/WindUI" target="_blank">Footagesus-WindUI</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
