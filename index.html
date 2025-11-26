@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANUI Documentation | Premium Roblox UI</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>ANUI Documentation | Advanced Roblox UI</title>
+    
+    <script>
+        (function() {
+            var ver = "" + new Date().getTime();
+            document.write('<link rel="stylesheet" href="style.css?v=' + ver + '">');
+        })();
+    </script>
+    <noscript>
+        <link rel="stylesheet" href="style.css">
+    </noscript>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
 
     <button class="mobile-menu-btn" onclick="toggleSidebar()">
@@ -18,7 +35,7 @@
         <aside class="sidebar" id="sidebar">
             <div class="brand">
                 <div class="brand-logo">
-                    <i data-lucide="zap" color="#000"></i>
+                    <i data-lucide="layers" color="#000"></i>
                 </div>
                 <span>ANUI Docs</span>
             </div>
@@ -27,11 +44,12 @@
                 <div class="nav-header">Getting Started</div>
                 <a href="#intro" class="nav-link active">Introduction</a>
                 <a href="#install" class="nav-link">Installation</a>
-                <a href="#config" class="nav-link">Profile Config <span class="badge opt">New</span></a>
+                <a href="#profile-setup" class="nav-link">Profile & Badges <span class="badge opt">New</span></a>
+                <a href="#keysystem" class="nav-link">Key System <span class="badge opt">New</span></a>
             </div>
 
             <div class="nav-group">
-                <div class="nav-header">Core Components</div>
+                <div class="nav-header">Containers</div>
                 <a href="#window" class="nav-link">Window</a>
                 <a href="#tab" class="nav-link">Tab</a>
                 <a href="#section" class="nav-link">Section</a>
@@ -39,21 +57,29 @@
             </div>
 
             <div class="nav-group">
-                <div class="nav-header">Elements</div>
+                <div class="nav-header">Inputs</div>
                 <a href="#button" class="nav-link">Button</a>
                 <a href="#toggle" class="nav-link">Toggle</a>
                 <a href="#slider" class="nav-link">Slider</a>
                 <a href="#input" class="nav-link">Input</a>
                 <a href="#dropdown" class="nav-link">Dropdown</a>
-                <a href="#colorpicker" class="nav-link">Colorpicker</a>
+                <a href="#colorpicker" class="nav-link">ColorPicker</a>
                 <a href="#keybind" class="nav-link">Keybind</a>
             </div>
             
             <div class="nav-group">
-                <div class="nav-header">Visuals</div>
+                <div class="nav-header">Display</div>
                  <a href="#paragraph" class="nav-link">Paragraph</a>
                  <a href="#image" class="nav-link">Image</a>
-                 <a href="#badges" class="nav-link">Badges</a>
+                 <a href="#video" class="nav-link">Video <span class="badge opt">New</span></a>
+                 <a href="#code" class="nav-link">Code</a>
+                 <a href="#divider" class="nav-link">Divider</a>
+            </div>
+
+            <div class="nav-group">
+                <div class="nav-header">Feedback</div>
+                 <a href="#notify" class="nav-link">Notify</a>
+                 <a href="#dialog" class="nav-link">Dialog</a>
             </div>
         </aside>
 
@@ -61,22 +87,22 @@
             <div class="container">
                 
                 <section id="intro">
-                    <h1>The Future of Roblox UI</h1>
+                    <h1>ANUI Library</h1>
                     <p style="font-size: 1.2rem; color: #fff; max-width: 800px;">
-                        ANUI is a high-performance, aesthetically premium UI Library for Roblox Script Hubs. 
-                        Built with animations, glassmorphism, and ease of use in mind.
+                        A premium, high-performance UI library for Roblox Script Hubs. 
+                        Featuring Glassmorphism, smooth animations, and advanced components like Video Frames and Key Systems.
                     </p>
                     <div class="card">
                         <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="https://discord.gg/cy6uMRmeZ" target="_blank" style="padding: 10px 20px; background: #5865F2; color: white; border-radius: 8px; font-weight: 600;">Join Discord</a>
-                            <a href="https://github.com/ANHub-Script/ANUI" target="_blank" style="padding: 10px 20px; background: #222; color: white; border-radius: 8px; border: 1px solid #333; font-weight: 600;">View GitHub</a>
+                            <a href="https://discord.gg/cy6uMRmeZ" target="_blank" class="btn-primary" style="padding: 10px 20px; border-radius: 8px; color: #000; font-weight: bold; text-decoration: none;">Join Discord</a>
+                            <a href="https://github.com/ANHub-Script/ANUI" target="_blank" style="padding: 10px 20px; background: rgba(255,255,255,0.1); color: white; border-radius: 8px; font-weight: 600; border: 1px solid #333;">View GitHub</a>
                         </div>
                     </div>
                 </section>
 
                 <section id="install">
                     <h2>Installation</h2>
-                    <p>Copy and paste this script into your executor to load the latest version of ANUI.</p>
+                    <p>Load the latest version of ANUI using the loadstring below.</p>
                     <div class="code-wrapper">
                         <div class="code-header">
                             <span class="lang-tag">Lua</span>
@@ -86,86 +112,106 @@
                     </div>
                 </section>
 
-                <section id="config">
-                    <h2>Profile Configuration <span class="badge opt">Recommended</span></h2>
-                    <p>Define a global profile variable to reuse across tabs easily.</p>
-                    
-                    <div class="code-wrapper">
-                        <div class="code-header">
-                            <span class="lang-tag">Lua</span>
-                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-                        </div>
-                        <pre><code><span class="token comment">-- Define Base Profile</span>
-<span class="token keyword">local</span> BaseProfile = {
-    Banner = <span class="token string">"https://..."</span>,
-    Avatar = <span class="token string">"rbxassetid://..."</span>,
-    Status = <span class="token keyword">true</span>,
-    Badges = { ... }
-}
-
-<span class="token comment">-- Helper Function</span>
-<span class="token keyword">local function</span> <span class="token function">MakeProfile</span>(data)
-    <span class="token keyword">local</span> p = {}
-    <span class="token keyword">for</span> k,v <span class="token keyword">in</span> <span class="token function">pairs</span>(BaseProfile) <span class="token keyword">do</span> p[k]=v <span class="token keyword">end</span>
-    <span class="token keyword">if</span> data <span class="token keyword">then for</span> k,v <span class="token keyword">in</span> <span class="token function">pairs</span>(data) <span class="token keyword">do</span> p[k]=v <span class="token keyword">end end</span>
-    <span class="token keyword">return</span> p
-<span class="token keyword">end</span></code></pre>
-                    </div>
-                </section>
-
-                <div style="height: 2px; background: var(--border); margin: 3rem 0;"></div>
-
                 <section id="window">
                     <h2>Window</h2>
-                    <p>The main container for your interface.</p>
+                    <p>The main container for your script hub. Supports resizing, themes, and custom headers.</p>
+                    
                     <div class="code-wrapper">
                         <div class="code-header"><span class="lang-tag">Lua</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
                         <pre><code><span class="token keyword">local</span> Window = ANUI:<span class="token function">CreateWindow</span>({
-    Title = <span class="token string">"Script Hub"</span>,
-    Author = <span class="token string">"Username"</span>,
-    Icon = <span class="token string">"rbxassetid://..."</span>,
+    Title = <span class="token string">".an hub | ANUI Library"</span>,
+    Author = <span class="token string">"by AdityaNugraha"</span>,
+    Folder = <span class="token string">"ANHub"</span>,
+    Icon = <span class="token string">"rbxassetid://84366761557806"</span>,
+    IconSize = <span class="token number">44</span>,
     Theme = <span class="token string">"Dark"</span>,
-    Transparent = <span class="token keyword">false</span> 
+    Transparent = <span class="token keyword">false</span>,     <span class="token comment">-- Glass effect</span>
+    SideBarWidth = <span class="token number">200</span>,
+    HasOutline = <span class="token keyword">true</span>,
 })</code></pre>
                     </div>
                     
                     <table class="api-table">
                         <thead><tr><th>Property</th><th>Type</th><th>Description</th></tr></thead>
                         <tbody>
-                            <tr><td class="prop-name">Title</td><td class="prop-type">string</td><td class="prop-desc">Window title text.</td></tr>
-                            <tr><td class="prop-name">Author</td><td class="prop-type">string</td><td class="prop-desc">Sub-text below the title.</td></tr>
-                            <tr><td class="prop-name">Theme</td><td class="prop-type">string</td><td class="prop-desc">Preset themes ("Dark", "Light", "Rose", etc).</td></tr>
+                            <tr><td class="prop-name">Title</td><td class="prop-type">string</td><td class="prop-desc">The main title of the window.</td></tr>
+                            <tr><td class="prop-name">Author</td><td class="prop-type">string</td><td class="prop-desc">Sub-text displayed below title.</td></tr>
+                            <tr><td class="prop-name">Folder</td><td class="prop-type">string</td><td class="prop-desc">Folder name for saving configs.</td></tr>
+                            <tr><td class="prop-name">Theme</td><td class="prop-type">string</td><td class="prop-desc">Preset themes: "Dark", "Light", "Rose", "Aqua".</td></tr>
                         </tbody>
                     </table>
                 </section>
 
-                <section id="tab">
-                    <h2>Tab</h2>
-                    <p>Creates a new menu category in the sidebar.</p>
+                <section id="profile-setup">
+                    <h2>Profile & Badges <span class="badge opt">New</span></h2>
+                    <p>ANUI supports a rich profile header system with Banner, Avatar, and Badges (clickable icons).</p>
+                    
+                    <div class="info-box">
+                        <p><strong>Tip:</strong> Use <code>MakeProfile</code> helper function to reuse profile data across tabs.</p>
+                    </div>
+
                     <div class="code-wrapper">
                         <div class="code-header"><span class="lang-tag">Lua</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
-                        <pre><code><span class="token keyword">local</span> MainTab = Window:<span class="token function">Tab</span>({
-    Title = <span class="token string">"Home"</span>,
-    Icon = <span class="token string">"home"</span>,
+                        <pre><code><span class="token comment">-- Global Profile Config</span>
+<span class="token keyword">local</span> BaseProfile = {
+    Banner = <span class="token string">"https://..."</span>, <span class="token comment">-- HTTP URL supported</span>
+    Avatar = <span class="token string">"rbxassetid://..."</span>,
+    Status = <span class="token keyword">true</span>, <span class="token comment">-- Online dot</span>
+    Badges = {
+        {
+            Icon = <span class="token string">"geist:logo-discord"</span>, <span class="token comment">-- Lucide icon</span>
+            Title = <span class="token string">"Discord"</span>, 
+            Desc = <span class="token string">"Join Server"</span>, <span class="token comment">-- Tooltip</span>
+            Callback = <span class="token keyword">function</span>() <span class="token function">setclipboard</span>(<span class="token string">"discord.gg/..."</span>) <span class="token keyword">end</span>
+        }
+    }
+}
+
+<span class="token comment">-- Applying to a Tab</span>
+Window:<span class="token function">Tab</span>({
     Profile = <span class="token function">MakeProfile</span>({
-        Title = <span class="token string">"Welcome User"</span>,
-        Desc = <span class="token string">"Main Dashboard"</span>
-    })
+        Title = <span class="token string">"AdityaNugraha"</span>,
+        Desc = <span class="token string">"Admin"</span>
+    }),
+    SidebarProfile = <span class="token keyword">true</span> <span class="token comment">-- Show in Sidebar as card</span>
+})</code></pre>
+                    </div>
+                </section>
+
+                <section id="tab">
+                    <h2>Tab</h2>
+                    <p>Creates a navigation category in the sidebar.</p>
+                    <div class="code-wrapper">
+                        <pre><code><span class="token keyword">local</span> Tab = Window:<span class="token function">Tab</span>({
+    Title = <span class="token string">"Main"</span>,
+    Icon = <span class="token string">"home"</span>,
+    SidebarProfile = <span class="token keyword">false</span>
+})</code></pre>
+                    </div>
+                </section>
+
+                <section id="section">
+                    <h2>Section</h2>
+                    <p>Collapsible container to group elements.</p>
+                    <div class="code-wrapper">
+                        <pre><code><span class="token keyword">local</span> Section = Tab:<span class="token function">Section</span>({
+    Title = <span class="token string">"Weapon Settings"</span>,
+    Icon = <span class="token string">"sword"</span>,
+    Opened = <span class="token keyword">true</span>
 })</code></pre>
                     </div>
                 </section>
 
                 <section id="button">
                     <h2>Button</h2>
-                    <p>A clickable element that executes a callback function.</p>
+                    <p>Standard clickable button.</p>
                     <div class="code-wrapper">
-                        <div class="code-header"><span class="lang-tag">Lua</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
-                        <pre><code>MainTab:<span class="token function">Button</span>({
-    Title = <span class="token string">"Click Me"</span>,
-    Desc = <span class="token string">"This is a description"</span>,
-    Icon = <span class="token string">"zap"</span>,
+                        <pre><code>Section:<span class="token function">Button</span>({
+    Title = <span class="token string">"Kill Aura"</span>,
+    Desc = <span class="token string">"Attack nearby enemies"</span>,
+    Icon = <span class="token string">"swords"</span>,
     Callback = <span class="token keyword">function</span>()
-        <span class="token function">print</span>(<span class="token string">"Clicked!"</span>)
+        <span class="token function">print</span>(<span class="token string">"Clicked"</span>)
     <span class="token keyword">end</span>
 })</code></pre>
                     </div>
@@ -173,32 +219,116 @@
 
                 <section id="toggle">
                     <h2>Toggle</h2>
-                    <p>A switch to turn features on or off.</p>
+                    <p>Switch or Checkbox for boolean values.</p>
                     <div class="code-wrapper">
-                        <div class="code-header"><span class="lang-tag">Lua</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
-                        <pre><code>MainTab:<span class="token function">Toggle</span>({
+                        <pre><code>Section:<span class="token function">Toggle</span>({
     Title = <span class="token string">"Auto Farm"</span>,
     Value = <span class="token keyword">false</span>,
+    Type = <span class="token string">"Toggle"</span>, <span class="token comment">-- or "Checkbox"</span>
     Callback = <span class="token keyword">function</span>(state)
-        <span class="token function">print</span>(<span class="token string">"AutoFarm:"</span>, state)
+        <span class="token function">print</span>(<span class="token string">"State:"</span>, state)
     <span class="token keyword">end</span>
 })</code></pre>
                     </div>
                 </section>
 
-                 <section id="badges">
-                    <h2>Badges <span class="badge opt">New</span></h2>
-                    <p>Add small interactive buttons inside the Profile Banner.</p>
+                <section id="slider">
+                    <h2>Slider</h2>
+                    <p>Drag to select a number value.</p>
                     <div class="code-wrapper">
-                        <div class="code-header"><span class="lang-tag">Lua</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
-                        <pre><code>Badges = {
-    {
-        Icon = <span class="token string">"youtube"</span>,
-        Title = <span class="token string">"Youtube"</span>, <span class="token comment">-- Optional text</span>
-        Desc = <span class="token string">"Visit Channel"</span>, <span class="token comment">-- Tooltip</span>
-        Callback = <span class="token keyword">function</span>() ... <span class="token keyword">end</span>
+                        <pre><code>Section:<span class="token function">Slider</span>({
+    Title = <span class="token string">"WalkSpeed"</span>,
+    Value = { Min = <span class="token number">16</span>, Max = <span class="token number">200</span>, Default = <span class="token number">16</span> },
+    Step = <span class="token number">1</span>,
+    Callback = <span class="token keyword">function</span>(val)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = val
+    <span class="token keyword">end</span>
+})</code></pre>
+                    </div>
+                </section>
+
+                <section id="input">
+                    <h2>Input</h2>
+                    <p>Text field for string input.</p>
+                    <div class="code-wrapper">
+                        <pre><code>Section:<span class="token function">Input</span>({
+    Title = <span class="token string">"Target Name"</span>,
+    Placeholder = <span class="token string">"Enter username..."</span>,
+    ClearTextOnFocus = <span class="token keyword">true</span>,
+    Callback = <span class="token keyword">function</span>(text)
+        <span class="token function">print</span>(text)
+    <span class="token keyword">end</span>
+})</code></pre>
+                    </div>
+                </section>
+
+                <section id="dropdown">
+                    <h2>Dropdown</h2>
+                    <p>Selection menu with support for Icons, Search, and Multi-select.</p>
+                    <div class="code-wrapper">
+                        <pre><code>Section:<span class="token function">Dropdown</span>({
+    Title = <span class="token string">"Select Weapon"</span>,
+    Values = {
+        { Title = <span class="token string">"Sword"</span>, Icon = <span class="token string">"sword"</span> },
+        { Title = <span class="token string">"Bow"</span>, Icon = <span class="token string">"crosshair"</span> },
+    },
+    Value = <span class="token string">"Sword"</span>,
+    Multi = <span class="token keyword">false</span>,
+    SearchBarEnabled = <span class="token keyword">true</span>,
+    Callback = <span class="token keyword">function</span>(val)
+        <span class="token function">print</span>(val.Title)
+    <span class="token keyword">end</span>
+})</code></pre>
+                    </div>
+                </section>
+
+                <section id="keysystem">
+                    <h2>Key System <span class="badge opt">New</span></h2>
+                    <p>Secure your script with built-in key verification support (Luarmor, Platoboost, Panda).</p>
+                    <div class="code-wrapper">
+                        <pre><code>Window:<span class="token function">CreateWindow</span>({
+    ...
+    KeySystem = {
+        Title = <span class="token string">"Key System"</span>,
+        Note = <span class="token string">"Join Discord to get key"</span>,
+        SaveKey = <span class="token keyword">true</span>,
+        Key = { <span class="token string">"ABC-123"</span>, <span class="token string">"XYZ-789"</span> }, <span class="token comment">-- Simple keys</span>
+        
+        <span class="token comment">-- OR use API (Luarmor Example)</span>
+        API = {
+            {
+                Type = <span class="token string">"luarmor"</span>,
+                ScriptId = <span class="token string">"your_script_id"</span>,
+                Discord = <span class="token string">"https://discord.gg/..."</span>
+            }
+        }
     }
-}</code></pre>
+})</code></pre>
+                    </div>
+                </section>
+
+                <section id="notify">
+                    <h2>Notify</h2>
+                    <p>Show alerts or info messages.</p>
+                    <div class="code-wrapper">
+                        <pre><code>ANUI:<span class="token function">Notify</span>({
+    Title = <span class="token string">"Success"</span>,
+    Content = <span class="token string">"Config loaded successfully!"</span>,
+    Icon = <span class="token string">"check"</span>,
+    Duration = <span class="token number">3</span>
+})</code></pre>
+                    </div>
+                </section>
+
+                 <section id="video">
+                    <h2>Video <span class="badge opt">New</span></h2>
+                    <p>Embed video files (webm) directly into the UI.</p>
+                    <div class="code-wrapper">
+                        <pre><code>Tab:<span class="token function">Video</span>({
+    Video = <span class="token string">"https://.../video.webm"</span>,
+    AspectRatio = <span class="token string">"16:9"</span>,
+    Radius = <span class="token number">12</span>
+})</code></pre>
                     </div>
                 </section>
 
@@ -207,31 +337,23 @@
     </div>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Copy Functionality
         function copyCode(btn) {
             const codeBlock = btn.parentElement.nextElementSibling.innerText;
             navigator.clipboard.writeText(codeBlock);
             const originalText = btn.innerText;
             btn.innerText = "Copied!";
-            btn.style.borderColor = "var(--primary)";
-            btn.style.color = "var(--primary)";
             setTimeout(() => {
                 btn.innerText = originalText;
-                btn.style.borderColor = "";
-                btn.style.color = "";
             }, 2000);
         }
 
-        // Sidebar Toggle for Mobile
         const sidebar = document.getElementById('sidebar');
         function toggleSidebar() {
             sidebar.classList.toggle('open');
         }
 
-        // Active Link Highlighter
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
